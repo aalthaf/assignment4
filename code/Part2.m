@@ -131,7 +131,7 @@ grid on;
 % Frequency reponses for each of the inputs
 f = (-ts/2:ts/2-1);             
 
-% Frequency response for the step function input
+% Frequency response for step function input
 fV1_in = fft(V1.');
 fV1_out = fft(V1(7, :));
 fsV1_in = fftshift(fV1_in);
@@ -140,31 +140,31 @@ figure(4)
 plot(f, abs(fsV1_in), 'r')
 hold on
 plot(f, abs(fsV1_out), 'b')
-title('Vin and Vout in frequency domain with a step function')
+title('Vin and Vout in frequency domain 0-1 step over 1/0.03')
 xlabel('Frequency ')
 ylabel('Voltage ')
 grid on
 
-% Frequency response for the sine function input
+% Frequency response for sine function input
 fV2 = fft(V2.');
 fsV2 = fftshift(fV2);
 figure(5)
 plot(f, abs(fsV2(:, 1)), 'r');
 hold on
 plot(f, abs(fsV2(:, 7)), 'b');
-title('Vin and Vout in frequency domain with a sin function')
-xlabel('Frequency')
-ylabel('Voltage ')
+title('Vin and Vout in frequency domain with a sin function with f = 1/0.03')
+xlabel('Frequency in ms')
+ylabel('Voltage as V ')
 grid on
 
-% Frequency response for the guassian function input
+% Frequency response for guassian function input
 fV3 = fft(V3.');
 fsV3 = fftshift(fV3);
 figure(6)
 plot(f, abs(fsV3(:, 1)), 'r')
 hold on
 plot(f, abs(fsV3(:, 7)), 'b')
-title('Vin and Vout in frequency domain with a Gaussian function')
+title('Vin and Vout in frequency domain with a Gaussian pulse')
 xlabel('Frequency')
 ylabel('Voltage')
 grid on
